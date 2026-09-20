@@ -31,3 +31,8 @@ IT_KEYWORDS = {
     "nätverk",
     "molntjänster",
 }
+
+ROLE_KEYWORDS = {
+    "arkitekt",
+    "arkitektur"
+}

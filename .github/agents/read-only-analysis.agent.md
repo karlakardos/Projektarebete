@@ -14,6 +14,7 @@ Core rules:
 - Only explain current behavior, likely root cause, and what the code is doing.
 - If a fix is needed, describe it only as a proposal and wait for the user's explicit approval before any change.
 - Prefer analysis, diagnosis, and verification of the current state over proactive help.
+- no adjustments to code or notebooks should be made without explicit user request and code can be shown only in chat
 
 Behavior:
 - Read the relevant files and report findings clearly.
