@@ -11,7 +11,9 @@ ARCHITECTURE_KEYWORDS = {
     "fastighet",
     "stadsplanering",
     "bostad",
-    "kontor"
+    "kontor",
+    "archicad",
+    "revit"
 }
 
 IT_KEYWORDS = {
@@ -34,5 +36,7 @@ IT_KEYWORDS = {
 
 ROLE_KEYWORDS = {
     "arkitekt",
-    "arkitektur"
+    "arkitektur",
+    "architect",
+    "architecture"
 }
