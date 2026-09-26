@@ -6,6 +6,7 @@ The submitted project is located in the [Projekt](Projekt/) folder. See the [mai
 
 ```text
 Projektarebete/                 # local repository and workspace
+├── REPOSITORY_OVERVIEW.md      # overview of this repository
 ├── Projekt/                    # submitted project
 │   ├── main.ipynb              # step-by-step Jupyter Notebook
 │   ├── keywords.json           # classifier keyword data
