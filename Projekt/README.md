@@ -1,12 +1,14 @@
 # Prototype Job Search for Construction Architecture Roles
 
+GitHub repository: [github.com/karlakardos/Projektarebete](https://github.com/karlakardos/Projektarebete)
+
 ## Goal
 
 This project is a prototype for finding construction and architecture-related jobs through the JobTech API. The user enters one or two keywords, such as `arkitekt`, `revit`, `bim`, or `projektering`. The program searches the API, excludes advertisements classified by its keyword rules as IT-related, and prints the remaining construction/architecture results.
 
 The project is intentionally limited. It demonstrates basic Python, API use, data handling, functions, loops, conditions, classes, inheritance, and error handling without attempting to create a complete job-search system.
 
-![Architecture job-search workflow](images/workflow.png)
+[View the construction architecture job-search workflow (PDF)](images/workflow.pdf)
 
 The diagram shows the intended search stages and is a conceptual overview of the implementation.
 
@@ -18,7 +20,7 @@ The diagram shows the intended search stages and is a conceptual overview of the
 4. Request a limited number of advertisements from the JobTech API.
 5. Clean the raw API records into simpler dictionaries.
 6. Exclude job text containing an IT keyword and keep construction/architecture matches.
-7. Print the matching headline, employer, city, and category.
+7. Print the matching headline, employer, city, and application link.
 
 API endpoint:
 
@@ -33,14 +35,14 @@ The classifier checks complete words in job text. This prevents `it` from being 
 ```text
 Projektarebete/
 ├── main.ipynb
-├── keywords.py
+├── keywords.json
 ├── images/
-│   └── workflow.png
+│   └── workflow.pdf
 └── README.md
 ```
 
 - `main.ipynb`: one step-by-step notebook containing imports, classes, classifier functions, API handling, output functions, and the main workflow.
-- `keywords.py`: contains the IT, architecture, and role keyword sets.
+- `keywords.json`: contains the IT, architecture, and role keyword sets.
 
 ## OOP And Error Handling
 
@@ -70,7 +72,7 @@ The local classifier uses simple keyword matching and cannot fully understand co
 - Local filtering may remove relevant jobs or retain jobs with imperfect categories.
 - Results may change as the API data changes.
 - The program does not rank results by relevance.
-- The program currently retrieves and processes data but does not yet save a CSV or JSON data file.
+- `keywords.json` is the submitted JSON data file used by the classifier. Job advertisements are retrieved live from the API and are not stored permanently by the program.
 - The search is focused on construction and architecture jobs, not IT architecture jobs.
 
 ## Running The Project
@@ -97,7 +99,7 @@ Already demonstrated by the current code:
 
 Still required or to be checked before submission:
 
-- Save and include the retrieved or processed data as CSV or JSON.
+- Include `keywords.json` as the project JSON data file.
 - Add an analysis of AI-industry roles and trends.
 - Add relevant professional certificates, such as AWS, Azure, or Databricks.
 - Add a reflection on technical choices, results, difficulties, and improvements.
@@ -106,7 +108,7 @@ Still required or to be checked before submission:
 
 ## Reflection
 
-The prototype shows that an external job API can be combined with keyword classification and object-oriented Python. The main difficulty is the quality and categorization of external job data. A future version could save the data, use more occupation fields, improve relevance filtering, and support more keywords. The current version keeps the logic understandable and focuses on construction-related architecture roles.
+The prototype shows that an external job API can be combined with keyword classification and object-oriented Python. The main difficulty is the quality and categorization of external job data. A future version could save API results, use more occupation fields, improve relevance filtering, and support more keywords. The current version keeps the logic understandable and focuses on construction-related architecture roles.
 
 ## GitHub
 
