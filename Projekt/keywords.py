@@ -13,7 +13,11 @@ ARCHITECTURE_KEYWORDS = {
     "bostad",
     "kontor",
     "archicad",
-    "revit"
+    "revit",
+    "autodesk",
+    "autocad",
+    "sketchup",
+    "bygglov"
 }
 
 IT_KEYWORDS = {
