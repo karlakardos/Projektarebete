@@ -102,8 +102,6 @@ An internet connection is required because the program uses the JobTech API.
 
 ## AI Industry And Role Analysis
 
-Construction and architecture roles increasingly use digital tools such as BIM, Revit, AutoCAD, and other systems for planning, modelling, documentation, and collaboration. This creates a connection to the AI-development role because AI developers work with data, automation, search systems, and digital decision support across many industries.
-
 This project demonstrates a small version of this type of work: it collects external job data, structures it, applies keyword-based analysis, and presents useful results to a user. The result is not an AI model, but it shows basic data processing that could later be expanded with better classification or machine learning.
 
 ## Relevant Professional Certificates
