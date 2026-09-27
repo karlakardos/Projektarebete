@@ -20,7 +20,7 @@
         "sketchup",
         "bygglov"
     ],
-    "it": [
+    "exclude": [
         "it",
         "system",
         "systemarkitekt",
@@ -35,7 +35,10 @@
         "c++",
         "f#",
         "nätverk",
-        "molntjänster"
+        "molntjänster",
+        "mark",
+        "mat",
+        "psykolog"
     ],
     "roles": [
         "arkitekt",

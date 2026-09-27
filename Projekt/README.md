@@ -4,7 +4,7 @@ GitHub repository: [github.com/karlakardos/Projektarebete](https://github.com/ka
 
 ## Goal
 
-This project is a prototype for finding construction and architecture-related jobs through the JobTech API. The user enters one or two keywords, such as `arkitekt`, `revit`, `bim`, or `projektering`. The program searches the API, excludes advertisements classified by its keyword rules as IT-related, and prints the remaining construction/architecture results.
+This project is a prototype for finding construction and architecture-related jobs through the JobTech API. The user enters one or two keywords, such as `arkitekt`, `revit`, `bim`, or `projektering`. The program searches the API, excludes advertisements classified by its keyword rules as `exclude`, and prints the remaining construction/architecture results.
 
 The project is intentionally limited. It demonstrates basic Python, API use, data handling, functions, loops, conditions, classes, inheritance, and error handling without attempting to create a complete job-search system.
 
@@ -16,10 +16,10 @@ The diagram shows the intended search stages and is a conceptual overview of the
 
 1. Read one or two keywords from the user.
 2. Normalize the input by removing extra spaces, converting it to lowercase, and splitting it into a list.
-3. Check that the input contains an architect role or construction/architecture keyword.
+3. Check that the input contains an architect role and/or construction/architecture keyword.
 4. Request a limited number of advertisements from the JobTech API.
 5. Clean the raw API records into simpler dictionaries.
-6. Exclude job text containing an IT keyword and keep construction/architecture matches.
+6. Exclude job text containing an exclusion keyword and keep construction/architecture matches.
 7. Print the matching headline, employer, city, and application link.
 
 API endpoint:
@@ -28,21 +28,29 @@ API endpoint:
 https://jobsearch.api.jobtechdev.se/search
 ```
 
-The classifier checks complete words in job text. This prevents `it` from being found inside `revit`. The IT keyword set is retained only as an exclusion rule for the construction-focused search.
+The classifier checks complete words in job text. The `exclude` keyword set is used to remove unrelated advertisements from the construction-focused search.
 
 ## Project Structure
 
 ```text
 Projektarebete/
-├── main.ipynb
-├── keywords.json
-├── images/
-│   └── workflow.pdf
-└── README.md
+├── REPOSITORY_OVERVIEW.md       # repository overview
+├── Projekt/                     # submitted project
+│   ├── main.ipynb
+│   ├── keywords.json
+│   ├── requirements.txt
+│   ├── README.md
+│   └── images/
+│       └── workflow.pdf
+└── venv/                        # local environment, excluded from GitHub
 ```
 
 - `main.ipynb`: one step-by-step notebook containing imports, classes, classifier functions, API handling, output functions, and the main workflow.
-- `keywords.json`: contains the IT, architecture, and role keyword sets.
+- `keywords.json`: contains the architecture, exclusion, and role keyword sets.
+- `requirements.txt`: lists the packages needed to run the notebook.
+- `images/workflow.pdf`: project workflow diagram.
+- `REPOSITORY_OVERVIEW.md`: short overview of the outer repository.
+- `venv/`: local Python environment; excluded from GitHub.
 
 ## OOP And Error Handling
 
@@ -79,37 +87,45 @@ The local classifier uses simple keyword matching and cannot fully understand co
 
 1. Open the project folder in VS Code.
 2. Open `main.ipynb`.
-3. Select a Python environment with `requests` installed.
-4. Run the notebook cells in order.
-5. Run the final cell to start the program.
-6. Enter an architect role or construction/projection keyword, for example `arkitekt`, `revit`, `bim`, or `projektering`.
+3. Create or select a Python environment.
+4. Install the required packages:
+
+	```text
+	pip install -r requirements.txt
+	```
+
+5. Run the notebook cells in order.
+6. Run the final cell to start the program.
+7. Enter an architect role and/or construction/projection keyword, for example `arkitekt`, `revit`, `bim`, or `projektering`.
 
 An internet connection is required because the program uses the JobTech API.
 
-## Assignment Checklist
+## AI Industry And Role Analysis
 
-Already demonstrated by the current code:
+Construction and architecture roles increasingly use digital tools such as BIM, Revit, AutoCAD, and other systems for planning, modelling, documentation, and collaboration. This creates a connection to the AI-development role because AI developers work with data, automation, search systems, and digital decision support across many industries.
 
-- Python variables, lists, dictionaries, conditions, loops, and functions
-- a parent class and child class using inheritance
-- standard Python features and the external `requests` library
-- public API data
-- `try/except` handling for API errors
-- Jupyter Notebook code
+This project demonstrates a small version of this type of work: it collects external job data, structures it, applies keyword-based analysis, and presents useful results to a user. The result is not an AI model, but it shows basic data processing that could later be expanded with better classification or machine learning.
 
-Still required or to be checked before submission:
+## Relevant Professional Certificates
 
-- Include `keywords.json` as the project JSON data file.
-- Add an analysis of AI-industry roles and trends.
-- Add relevant professional certificates, such as AWS, Azure, or Databricks.
-- Add a reflection on technical choices, results, difficulties, and improvements.
-- Add the final GitHub repository link.
-- Confirm at least five GitHub commits with clear messages.
+Relevant certificates for a future development of this project include:
+
+- AWS Certified Cloud Practitioner or an AWS machine-learning certification
+- Microsoft Azure Fundamentals or Azure AI Engineer Associate
+- Databricks certifications related to data engineering or machine learning
+
+These certificates are relevant because AI developers commonly work with cloud platforms, data pipelines, model services, and deployment environments. They are not required to run this prototype, but they are relevant to the professional context of the project.
 
 ## Reflection
 
-The prototype shows that an external job API can be combined with keyword classification and object-oriented Python. The main difficulty is the quality and categorization of external job data. A future version could save API results, use more occupation fields, improve relevance filtering, and support more keywords. The current version keeps the logic understandable and focuses on construction-related architecture roles.
+The prototype shows that an external job API can be combined with keyword classification and object-oriented Python. The main difficulty is the quality and categorization of external job data. Employers and the source system may use broad or inconsistent categories, so the local filter cannot guarantee perfect results.
+
+The construction-focused scope was chosen to make the problem understandable and useful for architects. Keeping the keyword groups in `keywords.json` makes them easier to update without changing the classifier code.
+
+A future version could use more occupation fields, improve relevance filtering, support more keywords, save API results, and use a more advanced classification method. The current version prioritizes a simple, explainable prototype. Machine learning can help with analysis of the available jobs and provide more appropriate results.
 
 ## GitHub
 
-Repository link: **to be added before submission**
+Repository link: [github.com/karlakardos/Projektarebete](https://github.com/karlakardos/Projektarebete)
+
+The project is version-controlled with GitHub and the repository history contains more than five commits with descriptive messages.
